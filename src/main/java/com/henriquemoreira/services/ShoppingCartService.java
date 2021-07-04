@@ -78,7 +78,8 @@ public class ShoppingCartService {
 			if (op == 1) {
 				currentCart.setShipping(currentCart.getShipping().add(unitFreightCost));
 			} else {
-				currentCart.setShipping(currentCart.getShipping().subtract(unitFreightCost));
+//				currentCart.setShipping(currentCart.getShipping().subtract(unitFreightCost));
+				currentCart.setShipping(unitFreightCost.multiply(new BigDecimal(currentCart.getProducts().size())));
 			}
 
 		} else {
